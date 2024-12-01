@@ -1,0 +1,35 @@
+.navbar {
+  background-color: #EADBC8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarListItem {
+  display: inline-block;
+}
+
+.link {
+  display: inline-block;
+  background-color: #102C57;
+  background-image: url(images/background.png);
+  text-shadow: .3rem .3rem .3rem #000, .6rem .6rem .6rem #111, 1rem 1rem 1rem #222;
+  text-transform: uppercase;
+  color: #FEFAF6;
+  text-align: center;
+  margin: 1rem 2.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border: 1px solid #FEFAF6;
+  border-radius: 15%;
+  opacity: 0.5;
+	transform: scale(1);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.link:hover {
+  opacity: 1;
+	transform: scale(1.25);
+  cursor: pointer;
+}

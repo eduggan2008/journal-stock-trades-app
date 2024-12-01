@@ -1,0 +1,9 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background: url(../src/assets/images/trading-platform.jpg) center/cover;
+}
+
+
+
