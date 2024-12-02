@@ -16,9 +16,6 @@ const Navbar = () => {
           <Link className='link' to='/trades'>TRADES</Link>
         </li>
         <li className='navbarListItem'>
-          <Link className='link' to='/spreadsheet'>SPREADSHEET</Link>
-        </li>
-        <li className='navbarListItem'>
           <Link className='link' to='/screenshots'>SCREENSHOTS</Link>
         </li>
         <li className='navbarListItem'>
