@@ -13,7 +13,10 @@ const Navbar = () => {
           <Link className='link' to='/'>HOME</Link>
         </li>
         <li className='navbarListItem'>
-          <Link className='link' to='/trades'>TRADES</Link>
+          <Link className='link' to='/journal'>JOURNAL</Link>
+        </li>
+        <li className='navbarListItem'>
+          <Link className='link' to='/log'>LOG</Link>
         </li>
         <li className='navbarListItem'>
           <Link className='link' to='/screenshots'>SCREENSHOTS</Link>
@@ -29,7 +32,7 @@ const Navbar = () => {
         </li>
         <li className='navbarListItem'>
           <Link className='link' to='/contact'>CONTACT</Link>
-        </li>            
+        </li>             
       </ul>
     </div>
   )

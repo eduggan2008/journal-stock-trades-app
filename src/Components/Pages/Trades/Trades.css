@@ -1,7 +1,53 @@
 .trades {
   font-size: 5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 70vw;
+  height: 70%;
+  margin: 5rem auto;
 }
 
+.tradesHeading {
+  margin-top: 10rem;
+}
+
+.tradesSubheading {
+  margin: 5rem 0;
+}
+
+table {
+  border-spacing: 0;
+  border: 12px solid #FEFAF6;
+  font-size: 1.7rem;
+  margin: 5rem 0;
+  background-color: #FEFAF6;
+  overflow: auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  display: block;
+}
+
+tbody {
+  white-space: no-wrap;
+}
+
+.table-heading, .table-data {
+  border: 1px solid #102C57;
+  padding: 4px 6px;
+  color: #000;
+}
+
+.table-heading {
+  position: sticky;
+  top: 0;
+  background-color: #102C57;
+  background-image: url(images/background.png);
+  color: #FEFAF6;
+}
+
+tbody > tr:nth-of-type(odd) {
+  background-color: #EADBC8;
+}

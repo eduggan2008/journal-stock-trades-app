@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './TradesForm.css'
+import ButtonUsage from '../../Button/Button'
 
 const TradesForm = ({addTrade}) => {
 
@@ -35,7 +36,7 @@ const TradesForm = ({addTrade}) => {
   }
 
   return (
-    <div className="common-pages tradesForm">
+    <div className="common-pages">
       <div>
         <form className='tradesForm' onSubmit={handleSubmit}>
         
@@ -54,7 +55,7 @@ const TradesForm = ({addTrade}) => {
             type='text' 
             id='symbol'
             name='symbol'
-            placeholder='Stock Symbal'
+            placeholder='Stock Symbol'
             value={formData.symbol}
             onChange={handleChange}
           />
@@ -100,6 +101,7 @@ const TradesForm = ({addTrade}) => {
           />
 
           <button className='submit' >Submit Trade</button>
+          <ButtonUsage />
 
         </form>
       </div>
@@ -110,36 +112,3 @@ const TradesForm = ({addTrade}) => {
 export default TradesForm
 
 
-
-  /* const [formData, setFormData] = useState({product: "", quantity: 1});
-
-  const handleChange = (e) => {
-    setFormData(currentData => {
-      return {
-        ...currentData,
-        [e.target.name]: e.target.value
-      };
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addItem(formData);
-    setFormData({product: "", quantity: 1});
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-
-        <label htmlFor="product">Product Name</label>
-        <input type="text" id="product" name="product" placeholder="Enter Product Name" value={formData.product} onChange={handleChange} />
-
-        <label htmlFor="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" value={formData.quantity} onChange={handleChange} />
-
-        <button>Add Item</button>
-        
-      </form>
-    </div>
-  ); */

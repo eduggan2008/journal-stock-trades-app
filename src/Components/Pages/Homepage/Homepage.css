@@ -3,7 +3,10 @@
   justify-content: center;
   align-items: center; 
   background: url(../src/assets/images/trading-platform.jpg) center/cover;
+  width: 70vw;
+  height: 70vh;
 }
+
 
 
 

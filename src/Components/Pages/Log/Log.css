@@ -1,6 +1,10 @@
-.tradesForm {
+.log {
+  font-size: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90vw;
+  height: 70%;
+  margin: 5rem auto;
 }
