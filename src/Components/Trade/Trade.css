@@ -7,7 +7,7 @@
   border-radius: 10px;
 }
 
-.entryDate, .symbol, .timeframe, .entrySignal, .direction, .shares, .entryPrice, .originalStop, .target, .riskAmount, .exitDate, .exitSignal, .exitPrice, .profitLoss, .comments {
+.entryDate, .symbol, .timeframe, .entrySignal, .direction, .shares, .entryPrice, .stop, .target, .riskAmount, .exitDate, .exitSignal, .exitPrice, .profitLoss, .comments {
   color: #000;
   font-size: 20px;
   padding: 1rem;

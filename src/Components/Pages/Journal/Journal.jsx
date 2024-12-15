@@ -1,15 +1,30 @@
+import { useState } from 'react'
 import './Journal.css'
 import TradesList from '../../TradesList/TradesList'
+import MainHeader from '../../MainHeader/MainHeader'
 
-const Journal = () => {
+const Journal = (props) => {
+  const [modalIsVisible, setModalIsVisible] = useState(false)
+
+  function showModalHandler(event) {
+    setModalIsVisible(true)
+  }
+
+  function hideModalHandler(event) {
+    setModalIsVisible(false)
+  }
+
   return (
-    <div className="common-pages journal">
-      <h1 className="common-heading">Stock Trading Journal</h1>
-      <h2 className="common-subheading">Journal Your Trades</h2>
+      <div className="common-pages journal">
+        <h1 className="common-heading">Stock Trading Journal</h1>
 
-      <TradesList />
+        <MainHeader onJournalNewTrade={showModalHandler}/>
 
-    </div>
+        <TradesList 
+          isJournalingTrade={modalIsVisible} 
+          onStopJournalingTrade={hideModalHandler} 
+        />
+      </div>
   )
 }
 
