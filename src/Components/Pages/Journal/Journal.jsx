@@ -27,7 +27,7 @@ const Journal = (props) => {
           onStopJournalingTrade={hideModalHandler} 
         />
 
-        <Log />
+        {/* <Log /> */}
 
         {/* <ReadOnlyLog /> */}
 
