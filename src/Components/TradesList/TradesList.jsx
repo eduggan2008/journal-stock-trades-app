@@ -3,8 +3,9 @@ import './TradesList.css'
 import Trade from '../Trade/Trade'
 import NewTrade from '../NewTrade/NewTrade'
 import Modal from '../Modal/Modal'
+import { v4 as uuid } from 'uuid';
 
-const TradesList = (props) => {
+const TradesList = ({ /* tradeData, */ isJournalingTrade, onStopJournalingTrade }) => {
   const [trades, setTrades] = useState([])
 
   function addTradeHandler(tradeData) {
@@ -13,39 +14,62 @@ const TradesList = (props) => {
 
   return (
     <>
-      {props.isJournalingTrade && (
-        <Modal onClose={props.onStopJournalingTrade}>
+      {isJournalingTrade && (
+        <Modal onClose={onStopJournalingTrade}>
           <NewTrade 
-            onCancel={props.onStopJournalingTrade}
+            onCancel={onStopJournalingTrade}
             onAddTrade={addTradeHandler}
           />
         </Modal>
       )}
 
       {trades.length >0 && (
-        <ul className='trades'>
-          {trades.map((trade) => 
-            <Trade 
-            key={trade.comments}
-              entryDate={trade.entryDate}
-              symbol={trade.symbol}
-              timeframe={trade.timeframe}
-              entrySignal={trade.entrySignal}
-              direction={trade.direction}
-              shares={trade.shares}
-              entryPrice={trade.entryPrice}
-              stop={trade.stop}
-              riskAmount={trade.riskAmount}
-              target={trade.target}
-              exitDate={trade.exitDate}
-              exitSignal={trade.exitSignal}
-              exitPrice={trade.exitPrice}
-              profitLoss={trade.profitLoss}
-              comments={trade.comments}
-            />
-          )}
-        </ul>
+        <table className="table">
+          <thead className='thead'>
+            <tr className="table-row">
+              <th className="table-heading" scope="col">Entry Date</th> 
+              <th className="table-heading" scope="col">Stock Symbol</th> 
+              <th className="table-heading" scope="col">Timeframe</th> 
+              <th className="table-heading" scope="col">Entry Signal</th> 
+              <th className="table-heading" scope="col">Direction</th> 
+              <th className="table-heading" scope="col">Number of Shares</th> 
+              <th className="table-heading money" scope="col">Entry Price</th> 
+              <th className="table-heading money" scope="col">Original Stop</th> 
+              <th className="table-heading money" scope="col">Initial Target</th> 
+              <th className="table-heading money" scope="col">Risk Amount</th> 
+              <th className="table-heading" scope="col">Exit Date</th> 
+              <th className="table-heading" scope="col">Exit Signal</th> 
+              <th className="table-heading money" scope="col">Exit Price</th> 
+              <th className="table-heading" scope="col">Profit/Loss</th> 
+              <th className="table-heading comments" scope="col">Comments</th>  
+            </tr>
+          </thead>
+
+          <tbody className='tbody'>
+            {trades.map((trade) => 
+              <Trade 
+                key={uuid}
+                entryDate={trade.entryDate}
+                symbol={trade.symbol}
+                timeframe={trade.timeframe}
+                entrySignal={trade.entrySignal}
+                direction={trade.direction}
+                shares={trade.shares}
+                entryPrice={trade.entryPrice}
+                stop={trade.stop}
+                riskAmount={trade.riskAmount}
+                target={trade.target}
+                exitDate={trade.exitDate}
+                exitSignal={trade.exitSignal}
+                exitPrice={trade.exitPrice}
+                profitLoss={trade.profitLoss}
+                comments={trade.comments}
+              />
+            )}
+          </tbody>
+        </table>
       )}
+
 
       {trades.length === 0 && (
         <div className='noPostsYet'>

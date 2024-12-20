@@ -6,9 +6,8 @@ const Log = () => {
       <h1 className="common-heading">Stock Trading Journal</h1>
       <h2 className="common-subheading">Trading Log</h2>
 
-      
       <table className="table">
-        <thead>
+        <thead className='thead'>
           <tr className="table-row">
             <th className="table-heading" scope="col">#</th>
             <th className="table-heading" scope="col">Entry Date</th> 
@@ -29,11 +28,11 @@ const Log = () => {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className='tbody'>
 
           <tr className="table-row">
             <td className="table-data" scope="row">5</td>
-            <td className="table-data" scope="row">12/20/2023</td>
+            <td className="table-data" scope="row">12/05/2023</td>
             <td className="table-data" scope="row">QID</td>
             <td className="table-data" scope="row">Daily</td>
             <td className="table-data" scope="row">Bull Elephant</td>

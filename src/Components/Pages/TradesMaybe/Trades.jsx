@@ -1,6 +1,6 @@
 import './Trades.css'
 import { useState } from 'react';
-import TradesForm from '../TradesForm/TradesForm'
+import TradesForm from '../TradesFormMaybe/TradesForm'
 import { v4 as uuid } from "uuid";
 import StickyHeadTable from '../../Table/Table';
 /* import userImg from '../../../assets/images/user.jpg'

@@ -1,11 +1,13 @@
 .trades {
   list-style: none;
-  max-width: 100rem;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
   margin: 1rem auto;
   padding: 1rem 0;
   display: grid;
+  grid-template-columns: repeat(1, 100%);
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 30%);
   justify-content: center;
   text-align: left;
 }

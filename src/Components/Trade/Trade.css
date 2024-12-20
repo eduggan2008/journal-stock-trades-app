@@ -1,8 +1,9 @@
 .trade {
   background-color: aqua;
   display: flex;
-  flex-direction: column;
-  margin: 8% 3%;
+  flex-direction: row;
+  width: 90%;
+  margin: 5rem;
   border: solid 3px #000;
   border-radius: 10px;
 }
@@ -15,7 +16,10 @@
 }
 
 .card {
-	margin: 8% 3%;
+	margin: 5rem;
 	border: solid 3px #000;
 	border-radius: 10px;
+  width: 90%;
 }
+
+

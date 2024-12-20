@@ -6,7 +6,7 @@ import Contact from './Components/Pages/Contact/Contact'
 import Login from './Components/Pages/Login/Login'
 import Screenshots from './Components/Pages/Screenshots/Screenshots'
 import Signup from './Components/Pages/Signup/Signup'
-import Trades from './Components/Pages/Trades/Trades'
+import Trades from './Components/Pages/TradesMaybe/Trades'
 import {
   BrowserRouter as Router,
   /* Switch, */
@@ -19,7 +19,7 @@ import ButtonUsage from './Components/Button/Button'
 import Footer from './Components/Footer/Footer'
 import Journal from './Components/Pages/Journal/Journal'
 import Log from './Components/Pages/Log/Log'
-
+import SampleJournal from './Components/Pages/SampleJournal/SampleJournal'
 
 
 const App = () => {
@@ -29,6 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Homepage></Homepage>}></Route> 
           <Route path="/journal" element={<Journal />}></Route> 
+          <Route path="/samplejournal" element={<SampleJournal />}></Route> 
           <Route path="/log" element={<Log />}></Route> 
           <Route path="/screenshots" element={<Screenshots />}></Route> 
           <Route path="/signup" element={<Signup />}></Route> 
