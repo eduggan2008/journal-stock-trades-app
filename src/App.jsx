@@ -21,7 +21,6 @@ import Journal from './Components/Pages/Journal/Journal'
 import Log from './Components/Pages/Log/Log'
 import SampleJournal from './Components/Pages/SampleJournal/SampleJournal'
 
-
 const App = () => {
   return (
       <Router>

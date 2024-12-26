@@ -9,7 +9,6 @@ const SampleJournal = () => {
 
   const [trades, setTrades] = useState(data)
 
-
   const [addFormData, setAddFormData] = useState({
     entryDate: '',
     symbol: '',
@@ -47,6 +46,8 @@ const SampleJournal = () => {
   })
 
   const [editTradeId, setEditTradeId] = useState(null)
+  
+  const [modalIsVisible, setModalIsVisible] = useState(false)
 
   function showModalHandler(event) {
     setModalIsVisible(true)
@@ -102,6 +103,7 @@ const SampleJournal = () => {
       profitLoss: addFormData.profitLoss,
       comments: addFormData.comments
     }
+
 
     const newTrades = [...trades, newTrade]
     setTrades(newTrades)
@@ -163,6 +165,7 @@ const SampleJournal = () => {
 
     setEditFormData(formValues)
   }
+  
 
   const handleCancelClick = () => {
     setEditTradeId(null)
@@ -182,11 +185,9 @@ const SampleJournal = () => {
     <div className='common-pages log'>
       <h1 className="common-heading">Stock Trading Journal</h1>
       <h2 className="common-subheading">Trading Log</h2>
-    
+
       <form className='form' onSubmit={handleAddFormSubmit}> 
         <h2 className='journalEntryHeading'>Journal Your Trade</h2>
-
-        
 
         <div>
           <label htmlFor='entryDate'>Entry Date</label>

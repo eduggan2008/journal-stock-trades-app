@@ -5,7 +5,7 @@ import NewTrade from '../NewTrade/NewTrade'
 import Modal from '../Modal/Modal'
 import { v4 as uuid } from 'uuid';
 
-const TradesList = ({ /* tradeData, */ isJournalingTrade, onStopJournalingTrade }) => {
+const TradesList = ({ isJournalingTrade, onStopJournalingTrade }) => {
   const [trades, setTrades] = useState([])
 
   function addTradeHandler(tradeData) {
@@ -42,6 +42,8 @@ const TradesList = ({ /* tradeData, */ isJournalingTrade, onStopJournalingTrade 
               <th className="table-heading money" scope="col">Exit Price</th> 
               <th className="table-heading" scope="col">Profit/Loss</th> 
               <th className="table-heading comments" scope="col">Comments</th>  
+              <th className="table-heading" scope="col">Edit</th>  
+              <th className="table-heading" scope="col">Delete</th>  
             </tr>
           </thead>
 
@@ -69,7 +71,6 @@ const TradesList = ({ /* tradeData, */ isJournalingTrade, onStopJournalingTrade 
           </tbody>
         </table>
       )}
-
 
       {trades.length === 0 && (
         <div className='noPostsYet'>

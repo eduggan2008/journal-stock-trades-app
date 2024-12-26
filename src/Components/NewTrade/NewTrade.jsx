@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import '../NewTrade/NewTrade.css'
-import { v4 as uuid } from 'uuid';
 
 const NewTrade = ({ onAddTrade, onCancel }) => {
+
   const [entryDate, setEntryDate] = useState('')
   const [symbol, setSymbol] = useState('')
   const [timeframe, setTimeframe] = useState('')
@@ -18,7 +18,7 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
   const [exitPrice, setExitPrice] = useState('')
   const [profitLoss, setProfitLoss] = useState('')
   const [comments, setComments] = useState('')
-  
+    
   function entryDateChangeHandler(event) {
     setEntryDate(event.target.value)
   } 
@@ -104,6 +104,7 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
   }
 
   return (
+
     <form className='form' onSubmit={submitHandler}> 
       <h2 className='journalEntryHeading'>Journal Your Trade</h2>
 
@@ -118,10 +119,77 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
         <select type='text' id='symbol'  required  onChange={symbolChangeHandler} >
           <option value=''>--Please select a Stock--</option>
           <option value='AAPL'>AAPL</option>
+          <option value='AEP'>AEP</option>
+          <option value='AI'>AI</option>
+          <option value='AIG'>AIG</option>
+          <option value='AKAM'>AKAM</option>
+          <option value='AMAT'>AMAT</option>
+          <option value='AMD'>AMD</option>
           <option value='AMZN'>AMZN</option>
+          <option value='BA'>BA</option>
+          <option value='BABA'>BABA</option>
+          <option value='BAC'>BAC</option>
+          <option value='BBY'>BBY</option>
           <option value='C'>C</option>
+          <option value='CL'>CL</option>
           <option value='CSCO'>CSCO</option>
+          <option value='CTSH'>CTSH</option>
+          <option value='CVS'>CVS</option>
+          <option value='CVX'>CVX</option>
+          <option value='DD'>DD</option>
+          <option value='DELL'>DELL</option>
+          <option value='DIA'>DIA</option>
+          <option value='DIS'>DIS</option>
+          <option value='DUK'>DUK</option>
+          <option value='EBAY'>EBAY</option>
+          <option value='GILD'>GILD</option>
+          <option value='GIS'>GIS</option>
+          <option value='GE'>GE</option>
           <option value='GM'>GM</option>
+          <option value='GME'>GME</option>
+          <option value='GOOG'>GOOG</option>
+          <option value='INTC'>INTC</option>
+          <option value='JPM'>JPM</option>
+          <option value='KO'>KO</option>
+          <option value='LOW'>LOW</option>
+          <option value='LVS'>LVS</option>
+          <option value='MARA'>MARA</option>
+          <option value='MET'>MET</option>
+          <option value='MRK'>MRL</option>
+          <option value='MRVL'>MRVL</option>
+          <option value='MS'>MS</option>
+          <option value='MU'>MU</option>
+          <option value='NKE'>NKE</option>
+          <option value='NUGT'>NUGT</option>
+          <option value='ON'>ON</option>
+          <option value='ORCL'>ORCL</option>
+          <option value='OXY'>OXY</option>
+          <option value='PM'>PM</option>
+          <option value='PYPL'>PYPL</option>
+          <option value='QCOM'>QCOM</option>
+          <option value='QID'>QID</option>
+          <option value='QQQ'>QQQ</option>
+          <option value='RIOT'>RIOT</option>
+          <option value='SBUX'>SBUX</option>
+          <option value='SCHW'>SCHW</option>
+          <option value='SDS'>SDS</option>
+          <option value='SHOP'>SHOP</option>
+          <option value='SMCI'>SMCI</option>
+          <option value='SNAP'>SNAP</option>
+          <option value='SPXL'>SPXL</option>
+          <option value='SPY'>SPY</option>
+          <option value='SQ'>SQ</option>
+          <option value='TGT'>TGT</option>
+          <option value='TQQQ'>TQQQ</option>
+          <option value='UAL'>UAL</option>
+          <option value='UBER'>UBER</option>
+          <option value='USO'>USO</option>
+          <option value='V'>V</option>
+          <option value='VZ'>VZ</option>
+          <option value='W'>W</option>
+          <option value='WFC'>WFC</option>
+          <option value='WMT'>WMT</option>
+          <option value='XOM'>XOM</option>
         </select>
       </div>
 
@@ -146,14 +214,21 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
         <label htmlFor='entrySignal'>Entry Signal</label>
         <select type='text' id='entrySignal' required  onChange={entrySignalChangeHandler} >
           <option value=''>--Please select an Entry Signal</option>
+          <option value='EB'>EB</option>
+          <option value='EB+'>EB+</option>
+          <option value='TB'>TB</option>
+          <option value='TB+'>TB+</option>
+          <option value='180'>180</option>
+          <option value='Acorn'>Acorn</option>
+          <option value='CC'>CC</option>
           <option value='VBS'>VBS</option>
-          <option value='VVSS'>VSS</option>
+          <option value='VSS'>VSS</option>
           <option value='RBI'>RBI</option>
           <option value='GBI'>GBI</option>
+          <option value='8ma Catch'>8ma Catch</option>
+          <option value='20ma Catch'>20ma Catch</option>
           <option value='Breakout'>Breakout</option>
           <option value='Breakdown'>Breakdown</option>
-          <option value='Bar High Long'>Bar High Long</option>
-          <option value='Bar Low Short'>Bar Low Short</option>
         </select>
       </div>
 

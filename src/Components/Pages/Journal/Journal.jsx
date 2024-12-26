@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './Journal.css'
 import TradesList from '../../TradesList/TradesList'
 import MainHeader from '../../MainHeader/MainHeader'
-import Log from '../Log/Log'
-import ReadOnlyLog from '../../ReadOnlyLog/ReadOnlyLog'
+/* import Log from '../Log/Log' */
+/* import ReadOnlyLog from '../../ReadOnlyLog/ReadOnlyLog' */
 
-const Journal = (props) => {
+const Journal = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false)
 
   function showModalHandler(event) {
@@ -15,6 +15,8 @@ const Journal = (props) => {
   function hideModalHandler(event) {
     setModalIsVisible(false)
   }
+
+
 
   return (
       <div className="common-pages journal">
