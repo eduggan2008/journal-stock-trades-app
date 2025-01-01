@@ -2,11 +2,11 @@ import './TradesData.css'
 import React from "react";
 import array from "../../Array/array";
 import { Link, useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 function TradesData() {
+  // Using useNavigation for redirecting to pages
   let history = useNavigate();
-
-  // Function to set the ID, Name, and Age in local storage
     
   function setID(id, entryDate, symbol, timeframe, entrySignal, direction, shares, entryPrice, originalStop, targetOne, riskAmount, exitDate, exitSignal, exitPrice, profitLoss, comments) {
     localStorage.setItem("id", id);
@@ -27,7 +27,7 @@ function TradesData() {
     localStorage.setItem("Comments", comments);
   }
 
-  // Function to delete an entry
+  // Function to delete a trade
   function deleted(id) {
     let index = array
       .map(function (e) {
@@ -35,10 +35,10 @@ function TradesData() {
       })
       .indexOf(id);
 
-      // Deleting the entry with the specified index
+      // Deleting the trade with the specified index
       array.splice(index, 1);
 
-      // Redirecting to the same page to re-render
+      // Redirecting 
       history("/tradesData");
     }
 
@@ -111,9 +111,9 @@ function TradesData() {
               })}
             </tbody>
           </table>
-            <div className="d-grid gap-2 mt-4">
+            <div className="">
               <Link to="/record">
-                <button variant="success" size="lg">
+                <button variant="contained" size="lg">
                   Record a Trade
                 </button>
               </Link>

@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Edit() {
-  // Here usestate has been used in order
-  // to set and get values from the jsx
+  
   const [entryDate, setEntryDate] = useState("");
   const [symbol, setSymbol] = useState("");
   const [timeframe, setTimeframe] = useState("");
@@ -35,9 +34,8 @@ function Edit() {
     .indexOf(id);
 
     // Function for handling the edit and
-    // pushing changes of editing/updating
+    // pushing changes of editing
     const handelSubmit = (e) => {
-      // Preventing from reload
       e.preventDefault();
 
       if (entryDate == "" || symbol == "" || timeframe == "" || entrySignal == "" || direction == "" || shares == "" || entryPrice == "" || originalStop == "" || targetOne == "" || riskAmount == "" || exitDate == "" || exitSignal == "" || exitPrice == "" || profitLoss == "" || comments == "" ) {
@@ -48,9 +46,7 @@ function Edit() {
       // Getting an index of an array
       let a = array[index];
 
-      // Putting the value from the input
-      // textfield and replacing it from
-      // existing for updating
+      // replacing input textfield value from existing data for editing trade data
       a.entryDate = entryDate;
       a.symbol = symbol;
       a.timeframe = timeframe;
@@ -67,12 +63,11 @@ function Edit() {
       a.profitLoss = profitLoss;
       a.comments = comments;
 
-      // Redirecting to main page
+      // Redirecting
       history("/tradesData");
     };
 
-    // Useeffect take care that page will
-    // be rendered only once
+    // Useeffect for page rendering only once
     useEffect(() => {
       setEntryDate(localStorage.getItem("Entry Date", entryDate));
       setSymbol(localStorage.getItem("Symbol", symbol));
@@ -418,8 +413,6 @@ function Edit() {
           />
         </div>    
 
-        {/* Handling an onclick event 
-            running an edit logic */}
         <div className='actions'>
           <button
           onClick={(e) => handelSubmit(e)}
@@ -430,7 +423,6 @@ function Edit() {
             Update  
           </button>
 
-          {/* Redirecting to main page after editing */}
           <Link className="d-grid gap-2" to="/tradesData">
             <button variant="warning" size="lg">
               Back
