@@ -14,15 +14,18 @@ const Navbar = () => {
         <li className='navbarListItem'>
           <Link className='link' to='/journal'>JOURNAL</Link>
         </li>
+        <li className='navbarListItem'>
+          <Link className='link' to='/tradesData'>TradesData</Link>
+        </li>
+        <li className='navbarListItem'>
+          <Link className='link' to='/record'>Record Trade</Link>
+        </li>
         {/* <li className='navbarListItem'>
-          <Link className='link' to='/samplejournal'>SAMPLE JOURNAL</Link>
+          <Link className='link' to='/edit'>Edit Trade</Link>
         </li> */}
-        <li className='navbarListItem'>
-          <Link className='link' to='/log'>LOG</Link>
-        </li>
-        <li className='navbarListItem'>
+        {/* <li className='navbarListItem'>
           <Link className='link' to='/screenshots'>SCREENSHOTS</Link>
-        </li>
+        </li> */}
         {/* <li className='navbarListItem'>
           <Link className='link' to='/signup'>SIGNUP</Link>
         </li> */}
@@ -34,7 +37,7 @@ const Navbar = () => {
         </li>
         <li className='navbarListItem'>
           <Link className='link' to='/contact'>CONTACT</Link>
-        </li>             
+        </li>                   
       </ul>
     </div>
   )

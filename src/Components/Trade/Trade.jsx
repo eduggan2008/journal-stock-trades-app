@@ -1,6 +1,6 @@
 import './Trade.css'
 
-const Trade = ({ entryDate, symbol, timeframe, entrySignal, direction, shares, entryPrice, stop, target, riskAmount, exitDate, exitSignal, exitPrice, profitLoss, comments }) => {
+const Trade = ({ entryDate, symbol, timeframe, entrySignal, direction, shares, entryPrice, originalStop, target, riskAmount, exitDate, exitSignal, exitPrice, profitLoss, comments }) => {
 
   return (
 
@@ -13,7 +13,7 @@ const Trade = ({ entryDate, symbol, timeframe, entrySignal, direction, shares, e
         <td className='direction'>{direction}</td>
         <td className='shares'>{shares}</td>
         <td className='entryPrice'>${entryPrice}</td>
-        <td className='stop'> ${stop}</td>
+        <td className='originalStop'> ${originalStop}</td>
         <td className='target'>${target}</td>
         <td className='riskAmount'>${riskAmount}</td>
         <td className='exitDate'>{exitDate}</td>

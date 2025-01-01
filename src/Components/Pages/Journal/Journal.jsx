@@ -2,8 +2,6 @@ import { useState } from 'react'
 import './Journal.css'
 import TradesList from '../../TradesList/TradesList'
 import MainHeader from '../../MainHeader/MainHeader'
-/* import Log from '../Log/Log' */
-/* import ReadOnlyLog from '../../ReadOnlyLog/ReadOnlyLog' */
 
 const Journal = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false)
@@ -28,12 +26,6 @@ const Journal = () => {
           isJournalingTrade={modalIsVisible} 
           onStopJournalingTrade={hideModalHandler} 
         />
-
-        {/* <Log /> */}
-
-        {/* <ReadOnlyLog /> */}
-
-
       </div>
   )
 }

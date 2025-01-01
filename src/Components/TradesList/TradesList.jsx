@@ -58,7 +58,7 @@ const TradesList = ({ isJournalingTrade, onStopJournalingTrade }) => {
                 direction={trade.direction}
                 shares={trade.shares}
                 entryPrice={trade.entryPrice}
-                stop={trade.stop}
+                originalStop={trade.originalStop}
                 riskAmount={trade.riskAmount}
                 target={trade.target}
                 exitDate={trade.exitDate}

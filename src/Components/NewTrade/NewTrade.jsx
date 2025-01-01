@@ -10,7 +10,7 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
   const [direction, setDirection] = useState('')
   const [shares, setShares] = useState('')
   const [entryPrice, setEntryPrice] = useState('')
-  const [stop, setStop] = useState('')
+  const [originalStop, setOriginalStop] = useState('')
   const [riskAmount, setRiskAmount] = useState('')
   const [target, setTarget] = useState('')
   const [exitDate, setExitDate] = useState('')
@@ -47,8 +47,8 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
     setEntryPrice(event.target.value)
   } 
 
-  function stopChangeHandler(event) {
-    setStop(event.target.value)
+  function originalStopChangeHandler(event) {
+    setOriginalStop(event.target.value)
   } 
 
   function targetChangeHandler(event) {
@@ -81,8 +81,8 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
 
   function submitHandler(event) {
     event.preventDefault()
+    
     const tradeData = {
-      /* id: uuid(), */
       entryDate: entryDate,
       symbol: symbol,
       timeframe: timeframe,
@@ -90,7 +90,7 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
       direction: direction,
       shares: shares,
       entryPrice: entryPrice,
-      stop: stop,
+      originalStop: originalStop,
       target: target,
       riskAmount: riskAmount,
       exitDate: exitDate,
@@ -104,13 +104,13 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
   }
 
   return (
-
+    
     <form className='form' onSubmit={submitHandler}> 
       <h2 className='journalEntryHeading'>Journal Your Trade</h2>
 
       <div>
         <label htmlFor='entryDate'>Entry Date</label>
-        <input type='date' id='entryDate' required  onChange={entryDateChangeHandler} />
+        <input type='date' id='entryDate' name='entryDate' required  onChange={entryDateChangeHandler} />
       </div>
       
 
@@ -252,8 +252,8 @@ const NewTrade = ({ onAddTrade, onCancel }) => {
       </div> 
 
       <div>
-        <label htmlFor='stop'>Stop Price</label>
-        <input type='number' step='0.01' id='stop' required  onChange={stopChangeHandler} />
+        <label htmlFor='stop'>Original Stop Price</label>
+        <input type='number' step='0.01' id='originalStop' required  onChange={originalStopChangeHandler} />
       </div>
 
       <div>
