@@ -18,6 +18,7 @@ import Journal from './Components/Pages/Journal/Journal'
 import TradesData from './Components/Pages/TradesData/TradesData'
 import Record from './Components/Record/Record'
 import Edit from './Components/Edit/Edit' 
+import Spreadsheet from './Components/Spreadsheet/Spreadsheet'
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           {/* <Route path="/login" element={<Login />}></Route> */} 
           <Route path="/about" element={<About />}></Route> 
           <Route path="/contact" element={<Contact />}></Route> 
+          <Route path="/spreadsheet" element={<Spreadsheet />}></Route> 
         </Routes>
         <Footer />
       </Router>
