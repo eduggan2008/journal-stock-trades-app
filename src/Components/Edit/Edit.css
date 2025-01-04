@@ -5,3 +5,88 @@
   align-items: center;
 }
 
+.form {
+  background-color: aqua;
+  padding: 1.3rem;
+  width: 50rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form input,
+.form select,
+.form select option,
+.form textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #fff;
+  color: #28262c;
+}
+
+.journalEntryHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  color: #000;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #34036c;
+  color: #fff;
+}
+
+.actions button:hover {
+  background-color: #23014a;
+}
+
+.actions button[type='button'] {
+  background-color: orange;
+}
+
+.actions button[type='button']:hover {
+  color: #000;
+}
+
+/* Form Validation*/
+
+.message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f55e5e;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 auto 1rem 0;
+}
+
+/* End Form Validation*/
+
+
+

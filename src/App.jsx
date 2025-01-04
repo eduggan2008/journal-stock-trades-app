@@ -13,12 +13,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import ButtonUsage from './Components/Button/Button'
 import Footer from './Components/Footer/Footer'
 import Journal from './Components/Pages/Journal/Journal'
 import TradesData from './Components/Pages/TradesData/TradesData'
 import Record from './Components/Record/Record'
-import Edit from './Components/Edit/Edit'
+import Edit from './Components/Edit/Edit' 
 
 
 const App = () => {
@@ -27,7 +26,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" exact element={<Homepage></Homepage>}></Route> 
-          <Route path="/journal" element={<Journal />}></Route> 
+          {/* <Route path="/journal" element={<Journal />}></Route>  */}
           <Route path="/tradesData" element={<TradesData />}></Route> 
           <Route path="/record" element={<Record />}></Route> 
           <Route path="/edit" element={<Edit />}></Route> 

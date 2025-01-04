@@ -1,10 +1,11 @@
 import './TradesData.css'
-import React from "react";
+import {  MdPostAdd, MdEditNote, MdDeleteForever } from 'react-icons/md'
 import array from "../../Array/array";
 import { Link, useNavigate } from "react-router-dom";
-import Button from '@mui/material/Button';
+
 
 function TradesData() {
+  
   // Using useNavigation for redirecting to pages
   let history = useNavigate();
     
@@ -47,78 +48,85 @@ function TradesData() {
         <h1 className="common-heading">Stock Trading Journal</h1>
         <h2 className="common-subheading">Trades Data</h2>
 
-          <table className="">
-            <thead className="">
-              <tr>
-                <th>Entry Date</th>
-                <th>Symbol</th>
-                <th>Timeframe</th>
-                <th>Entry Signal</th>
-                <th>Direction</th>
-                <th>Shares</th>
-                <th>Entry Price</th>
-                <th>Original Stop</th>
-                <th>Target One</th>
-                <th>Risk Amount</th>
-                <th>Exit Date</th>
-                <th>Exit Signal</th>
-                <th>Exit Price</th>
-                <th>Profit/Loss</th>
-                <th>Comments</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {array.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{item.entryDate}</td>
-                    <td>{item.symbol}</td>
-                    <td>{item.timeframe}</td>
-                    <td>{item.entrySignal}</td>
-                    <td>{item.direction}</td>
-                    <td>{item.shares}</td>
-                    <td>{item.entryPrice}</td>
-                    <td>{item.originalStop}</td>
-                    <td>{item.targetOne}</td>
-                    <td>{item.riskAmount}</td>
-                    <td>{item.exitDate}</td>
-                    <td>{item.exitSignal}</td>
-                    <td>{item.exitPrice}</td>
-                    <td>{item.profitLoss}</td>
-                    <td>{item.comments}</td>
-                    <td>
-                      <Link to={`/edit`}>
-                        <button
-                          onClick={() => setID(item.id, item.entryDate, item.symbol, item.timeframe, item.entrySignal, item.direction, item.shares, item.entryPrice, item.originalStop, item.targetOne, item.riskAmount, item.exitDate, item.exitSignal, item.exitPrice, item.profitLoss, item.comments)}
-                          variant="info"
-                          className="me-2"
-                        >
-                          Edit
-                        </button>
-                      </Link>
-
-                      <button
-                        onClick={() => deleted(item.id)}
-                        variant="danger"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-            <div className="">
-              <Link to="/record">
-                <button variant="contained" size="lg">
-                  Record a Trade
-                </button>
-              </Link>
-            </div>
+        
+        <div className="">
+          <Link to="/record">
+            <button className='button'>
+              <MdPostAdd size={18} />
+              Enter a new trade
+            </button>
+          </Link>
         </div>
+
+        <table className="">
+          <thead className="">
+            <tr>
+              <th>Entry Date</th>
+              <th>Symbol</th>
+              <th>Timeframe</th>
+              <th>Entry Signal</th>
+              <th>Direction</th>
+              <th>Shares</th>
+              <th>Entry Price</th>
+              <th>Original Stop</th>
+              <th>Target One</th>
+              <th>Risk Amount</th>
+              <th>Exit Date</th>
+              <th>Exit Signal</th>
+              <th>Exit Price</th>
+              <th>Profit/Loss</th>
+              <th>Comments</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {array.map((item, index) => {
+              return (
+                <tr key={index}>
+                  <td>{item.entryDate}</td>
+                  <td>{item.symbol}</td>
+                  <td>{item.timeframe}</td>
+                  <td>{item.entrySignal}</td>
+                  <td>{item.direction}</td>
+                  <td>{item.shares}</td>
+                  <td>{item.entryPrice}</td>
+                  <td>{item.originalStop}</td>
+                  <td>{item.targetOne}</td>
+                  <td>{item.riskAmount}</td>
+                  <td>{item.exitDate}</td>
+                  <td>{item.exitSignal}</td>
+                  <td>{item.exitPrice}</td>
+                  <td>{item.profitLoss}</td>
+                  <td>{item.comments}</td>
+                  <td>
+                    <Link to={`/edit`}>
+                      <button
+                        className='button'
+                        onClick={() => setID(item.id, item.entryDate, item.symbol, item.timeframe, item.entrySignal, item.direction, item.shares, item.entryPrice, item.originalStop, item.targetOne, item.riskAmount, item.exitDate, item.exitSignal, item.exitPrice, item.profitLoss, item.comments)}
+                      >
+                        <MdEditNote size={18}  />
+                        Edit
+                      </button>
+                    </Link>
+                  </td>
+
+                  <td>
+                    <button
+                      className='button'
+                      onClick={() => deleted(item.id)}
+                    >
+                      <MdDeleteForever size={18}  />
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     );
 }
 

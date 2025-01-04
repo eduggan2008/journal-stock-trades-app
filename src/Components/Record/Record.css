@@ -1,7 +1,156 @@
-.record {
+/* .record {
   font-size: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+ */
+
+.journal-form {
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 70%;
+  margin: 3rem auto;
+  padding: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 5rem;
+}
+
+
+label {
+  display: inline-block;
+  min-width: 90rem;
+  text-align: left;
+  font-size: 2rem;
+}
+
+input,
+textarea {
+  font: 2rem sans-serif;
+  width: 30rem;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  outline-style: solid;
+  outline-color: #000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 3rem;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #a990fb;
+  color: #2a2630;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #8c6cf7;
+}
+
+/* Form Validation*/
+
+.message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f55e5e;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 auto 1rem 0;
+}
+
+/* End Form Validation*/
+
+
+/* 
+.form {
+  background-color: aqua;
+  padding: 1.3rem;
+  width: 50rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form input,
+.form select,
+.form select option,
+.form textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #fff;
+  color: #28262c;
+}
+
+.journalEntryHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  color: #000;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #34036c;
+  color: #fff;
+}
+
+.actions button:hover {
+  background-color: #23014a;
+}
+
+.actions button[type='button'] {
+  background-color: orange;
+}
+
+.actions button[type='button']:hover {
+  color: #000;
+} */
+
+
 

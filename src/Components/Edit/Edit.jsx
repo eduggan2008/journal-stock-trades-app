@@ -1,5 +1,6 @@
 import './Edit.css'
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { MdUpdate, MdBackspace } from 'react-icons/md'
 import array from "../Array/array";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -108,13 +109,15 @@ function Edit() {
               setEntryDate(e.target.value)
             } 
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
           <label htmlFor='symbol'>Symbol</label>
           <select 
             type='text' 
-            id='symbol'  
+            id='symbol' 
+            name='symbol' 
             value={symbol}
             required  
             onChange={(e) =>
@@ -195,6 +198,7 @@ function Edit() {
             <option value='WMT'>WMT</option>
             <option value='XOM'>XOM</option>
           </select>
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -202,6 +206,7 @@ function Edit() {
           <select 
             type='text' 
             id='timeframe'
+            name='timeframe'
             value={timeframe}
             required  
             onChange={(e) =>
@@ -220,6 +225,7 @@ function Edit() {
             <option value='Weekly'>Weekly</option>
             <option value='Monthly'>Monthly</option>
           </select>
+          <p className='message'>Error Message</p>
         </div>  
 
         <div>
@@ -227,6 +233,7 @@ function Edit() {
           <select 
             type='text' 
             id='entrySignal' 
+            name='entrySignal' 
             value={entrySignal}
             required  
             onChange={(e) =>
@@ -250,6 +257,7 @@ function Edit() {
             <option value='Breakout'>Breakout</option>
             <option value='Breakdown'>Breakdown</option>
           </select>
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -257,6 +265,7 @@ function Edit() {
           <select 
             type='text' 
             id='direction' 
+            name='direction' 
             value={direction}
             required  
             onChange={(e) =>
@@ -267,6 +276,7 @@ function Edit() {
             <option value='Long'>Long</option>
             <option value='Short'>Short</option>
           </select>
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -274,12 +284,14 @@ function Edit() {
           <input 
             type='number' 
             id='shares' 
+            name='shares' 
             value={shares}
             required  
             onChange={(e) =>
               setShares(e.target.value)
             } 
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -288,26 +300,30 @@ function Edit() {
             type='number' 
             step='0.01' 
             id='entryPrice' 
+            name='entryPrice' 
             value={entryPrice}
             required  
             onChange={(e) =>
               setEntryPrice(e.target.value)
             } 
           />
+          <p className='message'>Error Message</p>
         </div> 
 
         <div>
-          <label htmlFor='stop'>Original Stop Price</label>
+          <label htmlFor='originalStop'>Original Stop Price</label>
           <input 
             type='number' 
             step='0.01'
             id='originalStop'
+            name='originalStop'
             value={originalStop}
             required  
             onChange={(e) =>
               setOriginalStop(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -316,26 +332,30 @@ function Edit() {
             type='number' 
             step='0.01' 
             id='targetOne'
+            name='targetOne'
             value={targetOne}
             required  
             onChange={(e) =>
               setTargetOne(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
-          <label htmlFor='riskAmount'>Dollar Risk Amount</label>
+          <label htmlFor='riskAmount'>Risk Amount</label>
           <input 
             type='number' 
             step='0.01' 
             id='riskAmount'  
+            name='riskAmount'  
             value={riskAmount}
             required  
             onChange={(e) =>
               setRiskAmount(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -343,12 +363,14 @@ function Edit() {
           <input 
             type='date' 
             id='exitDate' 
+            name='exitDate' 
             value={exitDate}
             required  
             onChange={(e) =>
               setExitDate(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div> 
 
         <div>
@@ -356,6 +378,7 @@ function Edit() {
           <select 
             type='text' 
             id='exitSignal' 
+            name='exitSignal' 
             value={exitSignal}
             required  
             onChange={(e) =>
@@ -371,6 +394,7 @@ function Edit() {
             <option value='20ma Stop'>20ma Stop</option>
             <option value='Pivot Stop'>Pivot Stop</option>
           </select>
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -379,12 +403,14 @@ function Edit() {
             type='number' 
             step='0.01' 
             id='exitPrice' 
+            name='exitPrice' 
             value={exitPrice}
             required  
             onChange={(e) =>
               setExitPrice(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
@@ -393,43 +419,53 @@ function Edit() {
             type='number' 
             step='0.01' 
             id='profitLoss'  
+            name='profitLoss'  
             value={profitLoss}
             required  
             onChange={(e) =>
               setProfitLoss(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>
 
         <div>
           <label htmlFor='comments'>Comments</label>
           <textarea 
             id='comments' 
+            name='comments' 
             value={comments}
             required  
             onChange={(e) =>
               setComments(e.target.value)
             }
           />
+          <p className='message'>Error Message</p>
         </div>    
+      </form>
 
-        <div className='actions'>
-          <button
+      <div className='actions'>
+        <button
+          className='button'
           onClick={(e) => handelSubmit(e)}
           variant="primary"
           type="submit"
           size="lg"
-          >
-            Update  
-          </button>
+        >
+          <MdUpdate size={18}  />
+          Update  
+        </button>
 
-          <Link className="d-grid gap-2" to="/tradesData">
-            <button variant="warning" size="lg">
+        <Link className="d-grid gap-2" to="/tradesData">
+          <button 
+            className='button'
+            variant="warning"   
+            size="lg">
+              <MdBackspace size={18}  />
               Back
-            </button>
-          </Link>
-        </div>
-      </form>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
