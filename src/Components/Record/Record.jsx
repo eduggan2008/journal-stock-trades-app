@@ -10,7 +10,7 @@ function Record() {
   const [entryDate, setEntryDate] = useState("");
   const [symbol, setSymbol] = useState("");
   const [timeframe, setTimeframe] = useState("");
-  const [entrySignal, setEntrySignal] = useState("");
+  const [reasonForEntry, setReasonForEntry] = useState("");
   const [direction, setDirection] = useState("");
   const [shares, setShares] = useState("");
   const [entryPrice, setEntryPrice] = useState("");
@@ -18,8 +18,9 @@ function Record() {
   const [targetOne, setTargetOne] = useState("");
   const [riskAmount, setRiskAmount] = useState("");
   const [exitDate, setExitDate] = useState("");
-  const [exitSignal, setExitSignal] = useState("");
   const [exitPrice, setExitPrice] = useState("");
+  const [reasonForExit, setReasonForExit] = useState("");
+  const [winLossBreakeven, setWinLossBreakeven] = useState("");
   const [profitLoss, setProfitLoss] = useState("");
   const [comments, setComments] = useState("");
 
@@ -36,7 +37,7 @@ function Record() {
     let a = entryDate,
         b = symbol,
         c = timeframe,
-        d = entrySignal,
+        d = reasonForEntry,
         f = direction,
         g = shares,
         h = entryPrice,
@@ -44,17 +45,58 @@ function Record() {
         j = targetOne,
         k = riskAmount,
         l = exitDate,
-        m = exitSignal,
-        n = exitPrice,
-        o = profitLoss,
-        p = comments;
+        m = exitPrice,
+        n = reasonForExit,
+        o = winLossBreakeven,
+        p = profitLoss,
+        q = comments;
 
-    if (entryDate == "" || symbol == "" || timeframe == "" || entrySignal == "" || direction == "" || shares == "" || entryPrice == "" || originalStop == "" || targetOne == "" || riskAmount == "" || exitDate == "" || exitSignal == "" || exitPrice == "" || profitLoss == "" || comments == "" ) {
+    /* if (entryDate == "" || symbol == "" || timeframe == "" || reasonForEntry == "" || direction == "" || shares == "" || entryPrice == "" || originalStop == "" || targetOne == "" || riskAmount == "" || exitDate == "" || exitPrice == "" || reasonForExit == "" || winLossBreakeven == "" || profitLoss == "" || comments == "" ) {
       alert("invalid input");
       return;
+    } */
+
+    if (entryDate == '') {
+      alert('Entry Date is required');
+     return
     }
 
-    array.push({ id: uni, entryDate: a, symbol: b, timeframe: c, entrySignal: d, direction: f, shares: g, entryPrice: h, originalStop: i, targetOne: j, riskAmount: k, exitDate: l, exitSignal: m, exitPrice: n, profitLoss: o, comments: p });
+    if (symbol == '') {
+      alert('Symbol is required')
+      return
+    }
+
+    if (timeframe == '') {
+      alert('Timeframe is required');
+     return
+    }
+
+    if (reasonForEntry == '') {
+      alert('Reason For Entry is required')
+      return
+    }
+
+    if (direction == '') {
+      alert('Direction is required');
+     return
+    }
+
+    if (shares == '') {
+      alert('Shares is required')
+      return
+    }
+
+    if (entryPrice == '') {
+      alert('Entry Price is required');
+     return
+    }
+
+    if (originalStop == '') {
+      alert('Original Stop is required')
+      return
+    }
+
+    array.push({ id: uni, entryDate: a, symbol: b, timeframe: c, reasonForEntry: d, direction: f, shares: g, entryPrice: h, originalStop: i, targetOne: j, riskAmount: k, exitDate: l, exitPrice: m, reasonForExit: n,  winLossBreakeven: o, profitLoss: p, comments: q });
 
     // Redirecting 
     history("/tradesData");
@@ -74,6 +116,7 @@ function Record() {
             id='entryDate' 
             name='entryDate' 
             required 
+            autoFocus
             onChange={(e) =>
               setEntryDate(e.target.value)
             } 
@@ -196,17 +239,17 @@ function Record() {
         </div>  
 
         <div>
-          <label htmlFor='entrySignal'>Entry Signal</label>
+          <label htmlFor='reasonForEntry'>Reason For Entry</label>
           <select 
             type='text' 
-            id='entrySignal' 
-            name='entrySignal' 
+            id='reasonForEntry' 
+            name='reasonForEntry' 
             required  
             onChange={(e) =>
-              setEntrySignal(e.target.value)
+              setReasonForEntry(e.target.value)
             }
           >
-            <option value=''>--Please select an Entry Signal</option>
+            <option value=''>--Please select a Reason For Entry</option>
             <option value='EB'>EB</option>
             <option value='EB+'>EB+</option>
             <option value='TB'>TB</option>
@@ -296,7 +339,7 @@ function Record() {
             step='0.01' 
             id='targetOne'
             name='targetOne'
-            required  
+            // required  
             onChange={(e) =>
               setTargetOne(e.target.value)
             }
@@ -311,7 +354,7 @@ function Record() {
             step='0.01' 
             id='riskAmount'  
             name='riskAmount'  
-            required  
+            // required  
             onChange={(e) =>
               setRiskAmount(e.target.value)
             }
@@ -325,7 +368,7 @@ function Record() {
             type='date' 
             id='exitDate' 
             name='exitDate' 
-            required  
+            // required  
             onChange={(e) =>
               setExitDate(e.target.value)
             }
@@ -334,18 +377,33 @@ function Record() {
         </div> 
 
         <div>
-          <label htmlFor='exitSignal'>Exit Signal</label>
+          <label htmlFor='exitPrice'>ExitPrice</label>
+          <input 
+            type='number' 
+            step='0.01' 
+            id='exitPrice' 
+            name='exitPrice' 
+            // required  
+            onChange={(e) =>
+              setExitPrice(e.target.value)
+            }
+          />
+          <p className='message'>Error Message</p>
+        </div>
+
+        <div>
+          <label htmlFor='reasonForExit'>Reason For Exit</label>
           <select 
             type='text' 
-            id='exitSignal' 
-            name='exitSignal' 
-            required  
+            id='reasonForExit' 
+            name='reasonForExit' 
+            // required  
             onChange={(e) =>
-              setExitSignal(e.target.value)
+              setReasonForExit(e.target.value)
             }
           >
-            <option value=''>--Please select an Exit Signal</option>
-            <option value='Full Stop Out'>Full Stop</option>
+            <option value=''>--Please select a Reason For Exit</option>
+            <option value='Stop Out'>Stop Out</option>
             <option value='Break Even Stop'>Break Even Stop</option>
             <option value='Big Bar Stop'>Big Bar Stop</option>
             <option value='Bar x Bar Stop'>Bar x Bar Stop</option>
@@ -357,17 +415,21 @@ function Record() {
         </div>
 
         <div>
-          <label htmlFor='exitPrice'>ExitPrice</label>
-          <input 
-            type='number' 
-            step='0.01' 
-            id='exitPrice' 
-            name='exitPrice' 
-            required  
+          <label htmlFor='winLossBreakeven'>Win/Loss/Breakeven</label>
+          <select 
+            type='text' 
+            id='winLossBreakeven' 
+            name='winLossBreakeven' 
+            // required  
             onChange={(e) =>
-              setExitPrice(e.target.value)
+              setWinLossBreakeven(e.target.value)
             }
-          />
+          >
+            <option value=''>--Please select Win, Loss or Breakeven</option>
+            <option value='Win'>Win</option>
+            <option value='Loss'>Loss</option>
+            <option value='Breakeven'>Breakeven</option>
+          </select>
           <p className='message'>Error Message</p>
         </div>
 
@@ -378,7 +440,7 @@ function Record() {
             step='0.01' 
             id='profitLoss'  
             name='profitLoss'  
-            required  
+            // required  
             onChange={(e) =>
               setProfitLoss(e.target.value)
             }
@@ -391,7 +453,7 @@ function Record() {
           <textarea 
             id='comments' 
             name='comments' 
-            required  
+            // required  
             onChange={(e) =>
               setComments(e.target.value)
             }
@@ -401,29 +463,30 @@ function Record() {
       </form> 
 
       <div className='actions'>
+        <Link className="" to="/tradesData">
+          <button
+            className='backButton' 
+            type='button'
+          >
+            <MdBackspace size={18}  />
+            Back
+          </button>
+        </Link>
+
         <button
-          className='button'
+          className='submitButton'
           onClick={(e) => handelSubmit(e)}
           type="submit"
         >
           <MdAddCircleOutline size={18}  />
           Submit
         </button>
-
-        <Link className="" to="/tradesData">
-          <button
-            className='button' 
-            size="lg"
-          >
-            <MdBackspace size={18}  />
-            Back
-          </button>
-        </Link>
       </div>
     </div>
   );
 }
 
 export default Record;
+
 
 

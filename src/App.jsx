@@ -28,6 +28,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Homepage></Homepage>}></Route> 
           {/* <Route path="/journal" element={<Journal />}></Route>  */}
+          {/* <Route path="/journalTrade" element={<JournalTradeForm />}></Route>  */}
           <Route path="/tradesData" element={<TradesData />}></Route> 
           <Route path="/record" element={<Record />}></Route> 
           <Route path="/edit" element={<Edit />}></Route> 

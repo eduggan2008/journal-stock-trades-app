@@ -10,7 +10,7 @@ function Edit() {
   const [entryDate, setEntryDate] = useState("");
   const [symbol, setSymbol] = useState("");
   const [timeframe, setTimeframe] = useState("");
-  const [entrySignal, setEntrySignal] = useState("");
+  const [reasonForEntry, setReasonForEntry] = useState("");
   const [direction, setDirection] = useState("");
   const [shares, setShares] = useState("");
   const [entryPrice, setEntryPrice] = useState("");
@@ -18,8 +18,9 @@ function Edit() {
   const [targetOne, setTargetOne] = useState("");
   const [riskAmount, setRiskAmount] = useState("");
   const [exitDate, setExitDate] = useState("");
-  const [exitSignal, setExitSignal] = useState("");
   const [exitPrice, setExitPrice] = useState("");
+  const [reasonForExit, setReasonForExit] = useState("");
+  const [winLossBreakeven, setWinLossBreakeven] = useState("");
   const [profitLoss, setProfitLoss] = useState("");
   const [comments, setComments] = useState("");
   const [id, setid] = useState("");
@@ -39,10 +40,51 @@ function Edit() {
     const handelSubmit = (e) => {
       e.preventDefault();
 
-      if (entryDate == "" || symbol == "" || timeframe == "" || entrySignal == "" || direction == "" || shares == "" || entryPrice == "" || originalStop == "" || targetOne == "" || riskAmount == "" || exitDate == "" || exitSignal == "" || exitPrice == "" || profitLoss == "" || comments == "" ) {
+     /*  if (entryDate == "" || symbol == "" || timeframe == "" || reasonForEntry == "" || direction == "" || shares == "" || entryPrice == "" || originalStop == "" || targetOne == "" || riskAmount == "" || exitDate == "" || exitPrice == "" || reasonForExit == "" || winLossBreakeven == "" || profitLoss == "" || comments == "" ) {
         alert("invalid input");
         return;
-      }
+      } */
+     
+    if (entryDate == '') {
+      alert('Entry Date is required');
+     return
+    }
+
+    if (symbol == '') {
+      alert('Symbol is required')
+      return
+    }
+
+    if (timeframe == '') {
+      alert('Timeframe is required');
+     return
+    }
+
+    if (reasonForEntry == '') {
+      alert('Reason For Entry is required')
+      return
+    }
+
+    if (direction == '') {
+      alert('Direction is required');
+     return
+    }
+
+    if (shares == '') {
+      alert('Shares is required')
+      return
+    }
+
+    if (entryPrice == '') {
+      alert('Entry Price is required');
+     return
+    }
+
+    if (originalStop == '') {
+      alert('Original Stop is required')
+      return
+    }
+
 
       // Getting an index of an array
       let a = array[index];
@@ -51,7 +93,7 @@ function Edit() {
       a.entryDate = entryDate;
       a.symbol = symbol;
       a.timeframe = timeframe;
-      a.entrySignal = entrySignal;
+      a.reasonForEntry = reasonForEntry;
       a.direction = direction;
       a.shares = shares;
       a.entryPrice = entryPrice;
@@ -59,8 +101,9 @@ function Edit() {
       a.targetOne = targetOne;
       a.riskAmount = riskAmount;
       a.exitDate = exitDate;
-      a.exitSignal = exitSignal;
       a.exitPrice = exitPrice;
+      a.reasonForExit = reasonForExit;
+      a.winLossBreakeven = winLossBreakeven;
       a.profitLoss = profitLoss;
       a.comments = comments;
 
@@ -73,7 +116,7 @@ function Edit() {
       setEntryDate(localStorage.getItem("Entry Date", entryDate));
       setSymbol(localStorage.getItem("Symbol", symbol));
       setTimeframe(localStorage.getItem("Timeframe", timeframe));
-      setEntrySignal(localStorage.getItem("Entry Signal", entrySignal));
+      setReasonForEntry(localStorage.getItem("Reason For Entry", reasonForEntry));
       setDirection(localStorage.getItem("Direction", direction));
       setShares(localStorage.getItem("Shares", shares));
       setEntryPrice(localStorage.getItem("Entry Price", entryPrice));
@@ -81,8 +124,9 @@ function Edit() {
       setTargetOne(localStorage.getItem("Target One", targetOne));
       setRiskAmount(localStorage.getItem("Risk Amount", riskAmount));
       setExitDate(localStorage.getItem("Exit Date", exitDate));
-      setExitSignal(localStorage.getItem("Exit Signal", exitSignal));
       setExitPrice(localStorage.getItem("Exit Price", exitPrice));
+      setReasonForExit(localStorage.getItem("Reason For Exit", reasonForExit));
+      setWinLossBreakeven(localStorage.getItem("Win/Loss/Breakeven", winLossBreakeven));
       setProfitLoss(localStorage.getItem("Profit/Loss", profitLoss));
       setComments(localStorage.getItem("Comments", comments));
       setid(localStorage.getItem("id"));
@@ -229,18 +273,18 @@ function Edit() {
         </div>  
 
         <div>
-          <label htmlFor='entrySignal'>Entry Signal</label>
+          <label htmlFor='reasonForEntry'>Reason For Entry</label>
           <select 
             type='text' 
-            id='entrySignal' 
-            name='entrySignal' 
-            value={entrySignal}
+            id='reasonForEntry' 
+            name='reasonForEntry' 
+            value={reasonForEntry}
             required  
             onChange={(e) =>
-              setEntrySignal(e.target.value)
+              setReasonForEntry(e.target.value)
             }
           >
-            <option value=''>--Please select an Entry Signal</option>
+            <option value=''>--Please select an Reason For Entry</option>
             <option value='EB'>EB</option>
             <option value='EB+'>EB+</option>
             <option value='TB'>TB</option>
@@ -334,7 +378,7 @@ function Edit() {
             id='targetOne'
             name='targetOne'
             value={targetOne}
-            required  
+            // required  
             onChange={(e) =>
               setTargetOne(e.target.value)
             }
@@ -350,7 +394,7 @@ function Edit() {
             id='riskAmount'  
             name='riskAmount'  
             value={riskAmount}
-            required  
+            // required  
             onChange={(e) =>
               setRiskAmount(e.target.value)
             }
@@ -365,7 +409,7 @@ function Edit() {
             id='exitDate' 
             name='exitDate' 
             value={exitDate}
-            required  
+            // required  
             onChange={(e) =>
               setExitDate(e.target.value)
             }
@@ -374,19 +418,35 @@ function Edit() {
         </div> 
 
         <div>
-          <label htmlFor='exitSignal'>Exit Signal</label>
+          <label htmlFor='exitPrice'>ExitPrice</label>
+          <input 
+            type='number' 
+            step='0.01' 
+            id='exitPrice' 
+            name='exitPrice' 
+            value={exitPrice}
+            // required  
+            onChange={(e) =>
+              setExitPrice(e.target.value)
+            }
+          />
+          <p className='message'>Error Message</p>
+        </div>
+
+        <div>
+          <label htmlFor='reasonForExit'>Reason For Exit</label>
           <select 
             type='text' 
-            id='exitSignal' 
-            name='exitSignal' 
-            value={exitSignal}
-            required  
+            id='reasonForExit' 
+            name='reasonForExit' 
+            value={reasonForExit}
+            // required  
             onChange={(e) =>
-              setExitSignal(e.target.value)
+              setReasonForExit(e.target.value)
             }
           >
-            <option value=''>--Please select an Exit Signal</option>
-            <option value='Full Stop Out'>Full Stop</option>
+            <option value=''>--Please select a Reason For Exit</option>
+            <option value='Stop Out'>Stop Out</option>
             <option value='Break Even Stop'>Break Even Stop</option>
             <option value='Big Bar Stop'>Big Bar Stop</option>
             <option value='Bar x Bar Stop'>Bar x Bar Stop</option>
@@ -398,18 +458,22 @@ function Edit() {
         </div>
 
         <div>
-          <label htmlFor='exitPrice'>ExitPrice</label>
-          <input 
-            type='number' 
-            step='0.01' 
-            id='exitPrice' 
-            name='exitPrice' 
-            value={exitPrice}
-            required  
+          <label htmlFor='winLossBreakeven'>Win/Loss/Breakeven</label>
+          <select 
+            type='text' 
+            id='winLossBreakeven' 
+            name='winLossBreakeven' 
+            value={winLossBreakeven}
+            // required  
             onChange={(e) =>
-              setExitPrice(e.target.value)
+              setWinLossBreakeven(e.target.value)
             }
-          />
+          >
+            <option value=''>--Please select Win, Loss or Breakeven</option>
+            <option value='Win'>Win</option>
+            <option value='Loss'>Loss</option>
+            <option value='Breakeven'>Breakeven</option>
+          </select>
           <p className='message'>Error Message</p>
         </div>
 
@@ -421,7 +485,7 @@ function Edit() {
             id='profitLoss'  
             name='profitLoss'  
             value={profitLoss}
-            required  
+            // required  
             onChange={(e) =>
               setProfitLoss(e.target.value)
             }
@@ -435,7 +499,7 @@ function Edit() {
             id='comments' 
             name='comments' 
             value={comments}
-            required  
+            // required  
             onChange={(e) =>
               setComments(e.target.value)
             }
@@ -445,26 +509,24 @@ function Edit() {
       </form>
 
       <div className='actions'>
-        <button
-          className='button'
-          onClick={(e) => handelSubmit(e)}
-          variant="primary"
-          type="submit"
-          size="lg"
-        >
-          <MdUpdate size={18}  />
-          Update  
-        </button>
-
-        <Link className="d-grid gap-2" to="/tradesData">
+        <Link className="" to="/tradesData">
           <button 
-            className='button'
-            variant="warning"   
-            size="lg">
+            className='backButton'
+            type="button" 
+            >
               <MdBackspace size={18}  />
               Back
           </button>
         </Link>
+
+        <button
+          className='updateButton'
+          onClick={(e) => handelSubmit(e)}
+          type="submit"
+        >
+          <MdUpdate size={18}  />
+          Update  
+        </button>
       </div>
     </div>
   );

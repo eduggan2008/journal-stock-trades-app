@@ -14,6 +14,9 @@ const Navbar = () => {
         {/* <li className='navbarListItem'>
           <Link className='link' to='/journal'>JOURNAL</Link>
         </li> */}
+        {/* <li className='navbarListItem'>
+          <Link className='link' to='/journalTrade'>Journal Trade</Link>
+        </li> */}
         <li className='navbarListItem'>
           <Link className='link' to='/tradesData'>TradesData</Link>
         </li>
