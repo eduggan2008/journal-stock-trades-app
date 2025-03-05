@@ -102,6 +102,7 @@ function Record() {
     history("/tradesData");
   };
 
+
   return (
     <div className="common-pages record">
       <h1 className="common-heading">Stock Trading Journal</h1>
@@ -347,7 +348,22 @@ function Record() {
           <p className='message'>Error Message</p>
         </div>
 
-        <div>
+        {/* <div>
+          <label htmlFor='riskAmount'>Risk Amount</label>
+          <input 
+            type='number' 
+            step='0.01' 
+            id='riskAmount'  
+            name='riskAmount'  
+            // required  
+            onChange={(e) =>
+              setRiskAmount(e.target.value)
+            }
+          />
+          <p className='message'>Error Message</p>
+        </div> */}
+        
+        <div> 
           <label htmlFor='riskAmount'>Risk Amount</label>
           <input 
             type='number' 

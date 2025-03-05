@@ -7,9 +7,24 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
+  JournalStockTrades: a
     .model({
-      content: a.string(),
+      entryDate: a.date(),
+      symbol: a.string(),
+      timeframe: a.string(),
+      reasonForEntry: a.string(),
+      direction: a.string(),
+      shares: a.integer(),
+      entryPrice: a.float(),
+      originalStop: a.float(),
+      targetOne: a.float(),
+      riskAmount: a.float(),
+      exitDate: a.date(),
+      exitPrice: a.float(),
+      reasonForExit: a.string(),
+      winLossBreakeven: a.string(),
+      profitLoss: a.float(),
+      comments: a.string(),
     })
     .authorization((allow) => [allow.guest()]),
 });
