@@ -262,12 +262,12 @@ const array = [
     originalStop: "138.00",
     targetOne: "146.50",
     riskAmount: "21.30",
-    exitDate: "",
-    exitPrice: "",
-    reasonForExit: "",
-    winLossBreakeven: "",
-    profitLoss: "",
-    comments: ""
+    exitDate: "2025-03-15",
+    exitPrice: "143.93",
+    reasonForExit: "Take profit 1/2, Bar x Bar 1/2",
+    winLossBreakeven: "Win",
+    profitLoss: "37.95",
+    comments: "Good trade.  Could have held longer though."
   }, 
 ]
 
