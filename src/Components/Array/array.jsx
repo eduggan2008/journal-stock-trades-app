@@ -269,6 +269,25 @@ const array = [
     profitLoss: "37.95",
     comments: "Good trade.  Could have held longer though."
   }, 
+  {
+    id: "15",
+    entryDate: "2025-03-24",
+    symbol: "BABA",
+    timeframe: "Daily",
+    reasonForEntry: "Breakdown",
+    direction: "Short",
+    shares: "20",
+    entryPrice: "132.68", 
+    originalStop: "135.37",
+    targetOne: "122.00",
+    riskAmount: "53.80",
+    exitDate: "2025-03-27",
+    exitPrice: "134.40",
+    reasonForExit: "Stopped out",
+    winLossBreakeven: "Loss",
+    profitLoss: "-34.35",
+    comments: "Good initial entry, but added size on a confirmation of the entry bar low, which was a mistake."
+  }, 
 ]
 
 export default array;
