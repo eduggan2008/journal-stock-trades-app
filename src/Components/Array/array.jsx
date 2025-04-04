@@ -324,7 +324,7 @@ const array = [
     reasonForExit: "Trail stop hit",
     winLossBreakeven: "Win",
     profitLoss: "17.10",
-    comments: "I moved stop tight to lock in some profits because tomorrow Trump Tariff anouncement coming.  Decided to take someting now and be flat before announcement.  Very good decision as markets got crushed after announcement on tariffs!!!"
+    comments: "I wanted to be flat before Trump's big Tariff announcement tomorrow. Very good decision!"
   }, 
   {
     id: "18",
