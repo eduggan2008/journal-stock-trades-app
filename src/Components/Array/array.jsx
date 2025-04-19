@@ -383,6 +383,25 @@ const array = [
     profitLoss: "-16.75",
     comments: "After a 2R move I decided not to move stop to BE.  It turns out I should have moved the stop after all."
   }, 
+  {
+    id: "21",
+    entryDate: "2025-04-16",
+    symbol: "AAPL",
+    timeframe: "Daily",
+    reasonForEntry: "Sell Setup",
+    direction: "Short",
+    shares: "25",
+    entryPrice: "199.19", 
+    originalStop: "204.19",
+    targetOne: "184.19",
+    riskAmount: "125.00",
+    exitDate: "",
+    exitPrice: "",
+    reasonForExit: "",
+    winLossBreakeven: "",
+    profitLoss: "",
+    comments: "Stop to BE after 1/2R move. Trail stop out 15 shares @ $195.00. "
+  }, 
 ]
 
 export default array;
