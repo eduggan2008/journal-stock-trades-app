@@ -395,12 +395,31 @@ const array = [
     originalStop: "204.19",
     targetOne: "184.19",
     riskAmount: "125.00",
-    exitDate: "",
-    exitPrice: "",
-    reasonForExit: "",
-    winLossBreakeven: "",
-    profitLoss: "",
-    comments: "Stop to BE after 1/2R move. Trail stop out 15 shares @ $195.00. "
+    exitDate: "2025-04-22",
+    exitPrice: "194.85",
+    reasonForExit: "Various",
+    winLossBreakeven: "Win",
+    profitLoss: "108.60",
+    comments: "Stop to BE after 1/2R move. Trail stop out 15 shares @ $195.00. Tight intraday trail stop 5 shares. Final stop BE 5 shares."
+  }, 
+  {
+    id: "22",
+    entryDate: "2025-04-30",
+    symbol: "QID",
+    timeframe: "Daily",
+    reasonForEntry: "None",
+    direction: "Long",
+    shares: "25",
+    entryPrice: "35.55", 
+    originalStop: "34.00",
+    targetOne: "39.00",
+    riskAmount: "38.75",
+    exitDate: "2025-05-01",
+    exitPrice: "33.16",
+    reasonForExit: "Stop out",
+    winLossBreakeven: "Loss",
+    profitLoss: "-59.75",
+    comments: "Bad entry, I was guessing price might bounce. Stop out bigger than planned due to gap down below stop."
   }, 
 ]
 
