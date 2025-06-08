@@ -495,7 +495,7 @@ const array = [
     reasonForExit: "Trail stop",
     winLossBreakeven: "Win",
     profitLoss: "11.25",
-    comments: "Should have been more patient with 2nd lot (25 shares).  IPT hit and then some!"
+    comments: "This was a day trade FYI. Should have been more patient with 2nd lot (25 shares).  IPT hit and then some!"
   }, 
 ]
 
