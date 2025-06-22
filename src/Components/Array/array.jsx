@@ -497,6 +497,44 @@ const array = [
     profitLoss: "11.25",
     comments: "This was a day trade FYI. Should have been more patient with 2nd lot (25 shares).  IPT hit and then some!"
   }, 
+  {
+    id: "27",
+    entryDate: "2025-06-10",
+    symbol: "TSLA",
+    timeframe: "1 Minute",
+    reasonForEntry: "Scalp",
+    direction: "Short",
+    shares: "25",
+    entryPrice: "321.51", 
+    originalStop: "322.51",
+    targetOne: "320.00",
+    riskAmount: "25.00",
+    exitDate: "2025-06-10",
+    exitPrice: "319.84",
+    reasonForExit: "Trail stop hit",
+    winLossBreakeven: "Win",
+    profitLoss: "41.75",
+    comments: "Good trade.  Move stop to BE after 1/2R.  Then move stop to 319.80 after IPT reached"
+  }, 
+  {
+    id: "28",
+    entryDate: "2025-06-17",
+    symbol: "QID",
+    timeframe: "Daily",
+    reasonForEntry: "Anticipation Bear Elephant near 200ma",
+    direction: "Long",
+    shares: "50",
+    entryPrice: "27.86", 
+    originalStop: "27.00",
+    targetOne: "30.44",
+    riskAmount: "43.00",
+    exitDate: "",
+    exitPrice: "",
+    reasonForExit: "",
+    winLossBreakeven: "",
+    profitLoss: "",
+    comments: ""
+  }, 
 ]
 
 export default array;
